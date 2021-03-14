@@ -23,7 +23,8 @@ public class HashMapSet {
     public HashMapSet() {
         phoneBook = new HashMap<>();
         phoneBook.put("Leon Vanderneffe", "0487102030");
-        //...
+        phoneBook.put("Lisa Jones", "(402) 4536 4674");
+        phoneBook.put("William H. Smith", "(998) 5488 0123");
     }
 
     // Met volgende code zoeken we het telefoonnummer van Leon Vanderneffe:
@@ -31,23 +32,20 @@ public class HashMapSet {
     // Vervolledig de methode lookupNumber die voor een gegeven naam
     // het overeenkomstig telefoonummer retourneert als een String
     public String lookupNumber(String name) {
-        String number = "";
-        //...
+        String number = phoneBook.get(name);
         return number;
     }
 
     // Vervolledig de methode enterNumber met parameters name en number
     // die een nieuw record of paar toevoegt aan het telefoonboek
     public void enterNumber(String name, String number) {
-        //...
+        phoneBook.put(name, number);
     }
 
     // Vervolledig de methode getAantal die het aantal records
     // in de HashMap phonebook retourneert.
     public int getAantal() {
-        int aantal = 0;
-        //...
-        return aantal;
+        return phoneBook.size();
     }
 
     // De methode keySet in de klasse Hashmap retourneert
@@ -61,10 +59,14 @@ public class HashMapSet {
     // Vervolledig de methode drukAf zodat alle namen en telefoonnummers
     // worden afgedrukt op het scherm.
     public void drukAf() {
-        // itereren over de Set van namen
+        // kortste manier maar vaste lay-out
+        System.out.println(phoneBook);
+        // door te itereren over de Set van namen
         for (String name : phoneBook.keySet()) {
-            //...
+            System.out.print(name + ": ");
+            System.out.println(lookupNumber(name));
         }
+
 
     }
 
@@ -73,11 +75,14 @@ public class HashMapSet {
     // Als het telefoonnummer niet bestaat,
     // wordt de String "niet gevonden" geretourneerd.
     public String omgekeerdZoeken(String number) {
-        String retour = "niet gevonden";
+        String retour = "niks gevonden";
         for (String name : phoneBook.keySet()) {
-            //...
+            if (lookupNumber(name).equals(number)) {
+                retour = name;
+            }
         }
         return retour;
     }
 }
+
 
