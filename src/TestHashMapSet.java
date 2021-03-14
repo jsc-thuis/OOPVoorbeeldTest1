@@ -1,3 +1,7 @@
+/**
+ * @author Jos
+ * @version 15 maart 2021
+ */
 public class TestHashMapSet {
 
     public static void main(String[] args) {

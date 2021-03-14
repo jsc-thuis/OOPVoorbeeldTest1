@@ -1,5 +1,9 @@
 import java.util.HashMap;
 
+/**
+ * @author Jos
+ * @version 15 maart 2021
+ */
 public class HashMapSet {
 
     // een map = collectie van paren
@@ -20,6 +24,10 @@ public class HashMapSet {
 
     // Breid de constructor uit zodat er meerdere contacten
     // staan in de HashMap
+
+    /**
+     * Constructor
+     */
     public HashMapSet() {
         phoneBook = new HashMap<>();
         phoneBook.put("Leon Vanderneffe", "0487102030");
@@ -31,6 +39,12 @@ public class HashMapSet {
     // String number = phonebook.get("Leon Vanderneffe");
     // Vervolledig de methode lookupNumber die voor een gegeven naam
     // het overeenkomstig telefoonummer retourneert als een String
+
+    /**
+     *
+     * @param name waarvan we nummer willen opzoeken
+     * @return telefoonnummer
+     */
     public String lookupNumber(String name) {
         String number = phoneBook.get(name);
         return number;
@@ -38,12 +52,23 @@ public class HashMapSet {
 
     // Vervolledig de methode enterNumber met parameters name en number
     // die een nieuw record of paar toevoegt aan het telefoonboek
+
+    /**
+     *
+     * @param name die we willen toevoegen
+     * @param number dat we willen toevoegen
+     */
     public void enterNumber(String name, String number) {
         phoneBook.put(name, number);
     }
 
     // Vervolledig de methode getAantal die het aantal records
     // in de HashMap phonebook retourneert.
+
+    /**
+     *
+     * @return aantal opgeslagen namen en nummers
+     */
     public int getAantal() {
         return phoneBook.size();
     }
@@ -58,6 +83,10 @@ public class HashMapSet {
     // dus de Set van namen uit ons telefoonboek.
     // Vervolledig de methode drukAf zodat alle namen en telefoonnummers
     // worden afgedrukt op het scherm.
+
+    /**
+     *  Telefoonboek afdrukken
+     */
     public void drukAf() {
         // kortste manier maar vaste lay-out
         System.out.println(phoneBook);
@@ -74,6 +103,12 @@ public class HashMapSet {
     // voor een gegeven telefoonummer de bijbehorende naam retourneert.
     // Als het telefoonnummer niet bestaat,
     // wordt de String "niet gevonden" geretourneerd.
+
+    /**
+     *
+     * @param number dat we gaan opzoeken
+     * @return overeenkomstige naam
+     */
     public String omgekeerdZoeken(String number) {
         String retour = "niks gevonden";
         for (String name : phoneBook.keySet()) {
